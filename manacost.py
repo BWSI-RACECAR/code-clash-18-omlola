@@ -42,17 +42,17 @@ class Solution:
             if character.isnumeric():
                 numbermana+=int(character)
             else:
-                if character in pool or "C" in pool:
+                if character in pool:
                     if character in pool:
                         for i in range(len(pool)):
                             if pool[i] == character:
                                 pool = pool[0:i] + pool[i+1:len(pool)]
                                 break
-                    else:
-                        for i in range(len(pool)):
-                            if pool[i] == "C":
-                                pool = pool[0:i] + pool[i+1:len(pool)]
-                                break
+                    # else:
+                    #     for i in range(len(pool)):
+                    #         if pool[i] == "C":
+                    #             pool = pool[0:i] + pool[i+1:len(pool)]
+                    #             break
                 else:
                     return False
         return len(pool) >= numbermana
